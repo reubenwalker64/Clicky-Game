@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import SpeakerCard from "./components/SpeakerCard/SpeakerCard";
 import GameWrapper from "./components/GameWrapper/GameWrapper";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
+import Footer from "./components/Footer/Footer";
 import speakers from "./speakers.json";
 import './App.css';
 {/*edit to bring Jumbotron in*/}
@@ -36,6 +37,7 @@ class App extends Component {
             company={speaker.company}
           />
         ))}
+        <Footer>Footer Message</Footer>
       </GameWrapper>
     );
   }
