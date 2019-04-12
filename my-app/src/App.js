@@ -4,6 +4,7 @@ import GameWrapper from "./components/GameWrapper/GameWrapper";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
 import Footer from "./components/Footer/Footer";
 import speakers from "./speakers.json";
+
 import './App.css';
 {/*edit to bring Jumbotron in*/}
 class App extends Component {
@@ -24,6 +25,7 @@ class App extends Component {
   // Map over this.state.speakers and render a SpeakerCard component for each speaker object
   render() {
     return (
+
       <GameWrapper>
         <Jumbotron>Speakers List</Jumbotron>
         {this.state.speakers.map(speaker => (
@@ -39,6 +41,7 @@ class App extends Component {
         ))}
         <Footer>Footer Message</Footer>
       </GameWrapper>
+
     );
   }
 }
