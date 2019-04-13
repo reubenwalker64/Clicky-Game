@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SpeakerCard from "./components/SpeakerCard/SpeakerCard";
+import SpeakerCard from "./components/SpeakerCard/index";
 import GameWrapper from "./components/GameWrapper/GameWrapper";
 import Jumbotron from "./components/Jumbotron/Jumbotron";
 import Footer from "./components/Footer/Footer";
@@ -30,6 +30,8 @@ class App extends Component {
   		function handleClick(e) {
       e.preventDefault();
     }
+    alert ("clicked");
+
   		const imageList = this.state.speakers;
   		if (clicked) {
   			imageList.forSpeaker ((image, index) => {
@@ -100,6 +102,7 @@ class App extends Component {
         </div>
         {this.state.speakers.map(speaker => (
           <SpeakerCard
+            handleClick={this.handleClick}
             removeSpeaker={this.removeSpeaker}
             id={speaker.id}
             key={speaker.id}

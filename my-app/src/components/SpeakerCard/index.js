@@ -1,9 +1,11 @@
 import React from "react";
 import "./SpeakerCard.module.css";
 
+//integrate handleClick by pulling in handleClick function as a prop
+
 function SpeakerCard(props) {
   return (
-    <center><div className="card">
+    <div className="card" onClick={props.handleClick}><center>
       <div className="img-container">
 				<br />
         <img alt={props.name} src={props.image} />
@@ -20,8 +22,8 @@ function SpeakerCard(props) {
             <strong>Company:</strong> {props.company}
           </p>
 
-      </div>
-    </div></center>
+      </div></center>
+    </div>
   );
 }
 
