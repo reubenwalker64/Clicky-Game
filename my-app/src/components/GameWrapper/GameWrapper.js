@@ -1,10 +1,10 @@
 import React from "react";
 import "./GameWrapper.css";
-{/*
+
 function GameWrapper(props) {
   return <div className="game-wrapper">{props.children}</div>;
 }
-*/}
+/*
 class GameWrapper extends Component {
 	state = {
 		images,
@@ -44,8 +44,29 @@ class GameWrapper extends Component {
 
 	render () {
 		return (
-			
+			<div className="GameWrapper">
+				<div className="gameMessage">
+					<p>{this.state.message}</p>
+				</div>
+				<div className="gameScore">
+					<p>Score: {this.state.score}</p>
+				</div>
+				<div className="container">
+					{this.state.images.map(image =>
+						<SpeakerCard
+							key={image.id}
+							id={image.id}
+							name={image.name}
+							clicked={image.clicked}
+							image={image.image}
+							handleClick={this.handleClick}
+						/>
+					)}
+				</div>
+			</div>
 		)
-	}
+	};
+*/
+/*error. Need event prevent default?*/
 
 export default GameWrapper;

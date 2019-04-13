@@ -1,6 +1,6 @@
 import React from 'react';
 import "./Footer.css";
-{/*edit to match Title's index.js???*/}
+
 const Footer = (props) => (
 <div className="footer">
   <div className="container text-center">

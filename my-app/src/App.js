@@ -6,7 +6,7 @@ import Footer from "./components/Footer/Footer";
 import speakers from "./speakers.json";
 
 import './App.css';
-{/*edit to bring Jumbotron in*/}
+
 class App extends Component {
   // Setting this.state.speakers to the speakers json array
 
