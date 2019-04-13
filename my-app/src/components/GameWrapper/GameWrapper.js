@@ -1,25 +1,29 @@
-import React from "react";
-import "./GameWrapper.css";
+import React, { Component } from "react";
+import "./GameWrapper.module.css";
+import SpeakerCard from "./../SpeakerCard/SpeakerCard"
 
 function GameWrapper(props) {
   return <div className="game-wrapper">{props.children}</div>;
 }
-/*
-class GameWrapper extends Component {
+
+/*class GameWrapper extends Component {
 	state = {
-		images,
+		images: [],
 		message: "Select a speaker to start!",
 		score: 0
 	};
 
 	handleClick = (id, clicked) => {
+		function handleClick(e) {
+    e.preventDefault();
+  }
 		const imageList = this.state.images;
 		if (clicked) {
 			imageList.forImage ((image, index) => {
 				imageList[index].clicked = false;
 			});
 			return this.setState({
-				image: imageList.sort(() => Math.random() - 0.5),
+				images: imageList.sort(() => Math.random() - 0.5),
 				message: "Sorry, you choose that speaker before",
 				score: 0
 			})
@@ -66,7 +70,7 @@ class GameWrapper extends Component {
 			</div>
 		)
 	};
+}
 */
 /*error. Need event prevent default?*/
-
 export default GameWrapper;

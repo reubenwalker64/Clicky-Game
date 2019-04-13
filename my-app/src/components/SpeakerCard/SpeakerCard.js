@@ -1,5 +1,4 @@
-import React from "react";
-import "./SpeakerCard.css";
+/*import "./SpeakerCard.module.css";
 
 function SpeakerCard(props) {
   return (
@@ -25,4 +24,4 @@ function SpeakerCard(props) {
   );
 }
 
-export default SpeakerCard;
+export default SpeakerCard;*/

@@ -11,7 +11,9 @@ class App extends Component {
   // Setting this.state.speakers to the speakers json array
 
     state = {
-    speakers
+    speakers,
+    message: "Select a speaker to start!",
+    score: 0
   };
 
 
@@ -22,12 +24,80 @@ class App extends Component {
     this.setState({ speakers });
   };
 
+
+
+  	handleClick = (id, clicked) => {
+  		function handleClick(e) {
+      e.preventDefault();
+    }
+  		const imageList = this.state.speakers;
+  		if (clicked) {
+  			imageList.forSpeaker ((image, index) => {
+  				imageList[index].clicked = false;
+  			});
+  			return this.setState({
+  				images: imageList.sort(() => Math.random() - 0.5),
+  				message: "Sorry, you choose that speaker before",
+  				score: 0
+  			})
+  		}
+  		else {
+  			imageList.forImage((image, index) => {
+  				if (id === image.id) {
+  					imageList[index].clicked = true;
+  				}
+  			});
+
+  			const {score} = this.state;
+  			const newScore = score + 1;
+
+  			return this.setState({
+  				image: imageList.sort (() => Math.random() - .05),
+  				message: "Congrats, choose your next speaker",
+  				score: newScore
+  			})
+  		}
+  	};
+/*
+  	render () {
+  		return (
+  			<div className="GameWrapper">
+  				<div className="gameMessage">
+  					<p>{this.state.message}</p>
+  				</div>
+  				<div className="gameScore">
+  					<p>Score: {this.state.score}</p>
+  				</div>
+/*  				<div className="container">
+  					{this.state.speakers.map(image =>
+  						<SpeakerCard
+  							key={image.id}
+  							id={image.id}
+  							name={image.name}
+  							clicked={image.clicked}
+  							image={image.image}
+  							handleClick={this.handleClick}
+  						/>
+  					)}
+  				</div>
+  			</div>
+  		)
+  	};
+  }
+*/
+
   // Map over this.state.speakers and render a SpeakerCard component for each speaker object
   render() {
     return (
 
       <GameWrapper>
         <Jumbotron>Speakers List</Jumbotron>
+        <div className="gameMessage">
+          <p>{this.state.message}</p>
+        </div>
+        <div className="gameScore">
+          <p>Score: {this.state.score}</p>
+        </div>
         {this.state.speakers.map(speaker => (
           <SpeakerCard
             removeSpeaker={this.removeSpeaker}
