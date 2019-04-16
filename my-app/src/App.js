@@ -16,25 +16,24 @@ class App extends Component {
     score: 0
   };
 
-
+/*
   removeSpeaker = id => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
     const speakers = this.state.speakers.filter(speaker => speaker.id !== id);
     // Set this.state.speakers equal to the new speakers array
     this.setState({ speakers });
   };
-
+*/
 
 
   	handleClick = (id, clicked) => {
   		function handleClick(e) {
       e.preventDefault();
     }
-    alert ("clicked");
 
   		const imageList = this.state.speakers;
   		if (clicked) {
-  			imageList.forSpeaker ((image, index) => {
+  			imageList.forEach ((image, index) => {
   				imageList[index].clicked = false;
   			});
   			return this.setState({
@@ -44,7 +43,7 @@ class App extends Component {
   			})
   		}
   		else {
-  			imageList.forImage((image, index) => {
+  			imageList.forEach ((image, index) => {
   				if (id === image.id) {
   					imageList[index].clicked = true;
   				}
@@ -54,7 +53,7 @@ class App extends Component {
   			const newScore = score + 1;
 
   			return this.setState({
-  				image: imageList.sort (() => Math.random() - .05),
+  				image: imageList.sort (() => Math.random() - 0.5),
   				message: "Congrats, choose your next speaker",
   				score: newScore
   			})
@@ -70,7 +69,7 @@ class App extends Component {
   				<div className="gameScore">
   					<p>Score: {this.state.score}</p>
   				</div>
-/*  				<div className="container">
+ 				<div className="container">
   					{this.state.speakers.map(image =>
   						<SpeakerCard
   							key={image.id}
@@ -94,11 +93,11 @@ class App extends Component {
 
       <GameWrapper>
         <Jumbotron>Speakers List</Jumbotron>
-        <div className="gameMessage">
+        <div className="gameMessage text-center">
           <p>{this.state.message}</p>
         </div>
-        <div className="gameScore">
-          <p>Score: {this.state.score}</p>
+        <div className="gameScore text-center">
+          <h4>Score: {this.state.score}</h4>
         </div>
         {this.state.speakers.map(speaker => (
           <SpeakerCard
