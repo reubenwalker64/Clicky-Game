@@ -16,21 +16,11 @@ class App extends Component {
     score: 0
   };
 
-/*
-  removeSpeaker = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const speakers = this.state.speakers.filter(speaker => speaker.id !== id);
-    // Set this.state.speakers equal to the new speakers array
-    this.setState({ speakers });
-  };
-*/
-
-
   	handleClick = (id, clicked) => {
   		function handleClick(e) {
       e.preventDefault();
     }
-
+/*edit if statement - not working*/
   		const imageList = this.state.speakers;
   		if (clicked) {
   			imageList.forEach ((image, index) => {
@@ -59,39 +49,13 @@ class App extends Component {
   			})
   		}
   	};
-/*
-  	render () {
-  		return (
-  			<div className="GameWrapper">
-  				<div className="gameMessage">
-  					<p>{this.state.message}</p>
-  				</div>
-  				<div className="gameScore">
-  					<p>Score: {this.state.score}</p>
-  				</div>
- 				<div className="container">
-  					{this.state.speakers.map(image =>
-  						<SpeakerCard
-  							key={image.id}
-  							id={image.id}
-  							name={image.name}
-  							clicked={image.clicked}
-  							image={image.image}
-  							handleClick={this.handleClick}
-  						/>
-  					)}
-  				</div>
-  			</div>
-  		)
-  	};
-  }
-*/
 
   // Map over this.state.speakers and render a SpeakerCard component for each speaker object
   render() {
     return (
 
-      <GameWrapper>
+      <div className="container-fluid GameWrapper">
+
         <Jumbotron>Speakers List</Jumbotron>
         <div className="gameMessage text-center">
           <p>{this.state.message}</p>
@@ -99,6 +63,7 @@ class App extends Component {
         <div className="gameScore text-center">
           <h4>Score: {this.state.score}</h4>
         </div>
+        <div className="allCards col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
         {this.state.speakers.map(speaker => (
           <SpeakerCard
             handleClick={this.handleClick}
@@ -111,8 +76,9 @@ class App extends Component {
             company={speaker.company}
           />
         ))}
+        </div>
         <Footer>Footer Message</Footer>
-      </GameWrapper>
+      </div>
 
     );
   }
