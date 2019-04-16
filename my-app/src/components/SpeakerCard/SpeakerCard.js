@@ -1,27 +1,18 @@
-/*import "./SpeakerCard.module.css";
+/*import React from 'react';
+import "./SpeakerCard.module.css";
 
-function SpeakerCard(props) {
-  return (
-    <center><div className="card">
-      <div className="img-container">
-				<br />
-        <img alt={props.name} src={props.image} />
-      </div>
-      <div className="content">
-					<br />
-					<p>
-            <strong>Name:</strong> {props.name}
-          </p>
-          <p>
-            <strong>Title:</strong> {props.title}
-          </p>
-          <p>
-            <strong>Company:</strong> {props.company}
-          </p>
+const SpeakerCard = props => (
+	<div
+	className="allCards col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3"
+	key={props.id}
 
-      </div>
-    </div></center>
-  );
-}
+	>
+		<img
+		id={props.name}
+		src={props.image}
+		alt={props.name}
+		/>
+	</div>
+);
 
 export default SpeakerCard;*/
