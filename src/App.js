@@ -23,7 +23,7 @@ class App extends Component {
 /*edit if statement - not working*/
   		const imageList = this.state.speakers;
   		if (clicked) {
-  			imageList.forEach ((image, index) => {
+  			imageList.forEach((image, index) => {
   				imageList[index].clicked = false;
   			});
   			return this.setState({
@@ -43,7 +43,7 @@ class App extends Component {
   			const newScore = score + 1;
 
   			return this.setState({
-  				image: imageList.sort (() => Math.random() - 0.5),
+  				image: imageList.sort(() => Math.random() - 0.5),
   				message: "Congrats, choose your next speaker",
   				score: newScore
   			})
@@ -64,6 +64,7 @@ class App extends Component {
           <h4>Score: {this.state.score}</h4>
         </div>
         <div className="allCards col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
+
         {this.state.speakers.map(speaker => (
           <SpeakerCard
             handleClick={this.handleClick}
@@ -76,7 +77,8 @@ class App extends Component {
             company={speaker.company}
           />
         ))}
-        </div>
+
+      </div>
         <Footer>Footer Message</Footer>
       </div>
 

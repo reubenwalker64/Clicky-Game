@@ -5,7 +5,7 @@ import "./SpeakerCard.module.css";
 
 function SpeakerCard(props) {
   return (
-    <div className="card" onClick={props.handleClick}><center>
+    <div className="card" onClick={props.handleClick}>
       <div className="img-container">
 				<br />
         <img alt={props.name} src={props.image} />
@@ -22,7 +22,7 @@ function SpeakerCard(props) {
             <strong>Company:</strong> {props.company}
           </p>
 
-      </div></center>
+      </div>
     </div>
   );
 }
