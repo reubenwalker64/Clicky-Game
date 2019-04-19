@@ -3,7 +3,7 @@
 }
 
 .jumbotron {
-  background-color: blue !important;
+  background-color: green !important;
   min-height: 40vh;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@ hr {
 }
 
 .footer {
-  background-color: green !important;
+  background-color: blue !important;
   min-height: 30vh !important;
   display: flex;
   flex-direction: column;
