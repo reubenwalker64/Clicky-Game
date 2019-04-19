@@ -3,7 +3,7 @@
 }
 
 .jumbotron {
-  background-color: green !important;
+  background-color: blue !important;
   min-height: 40vh;
   display: flex;
   flex-direction: column;
