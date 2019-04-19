@@ -1,0 +1,13 @@
+.App {
+  text-align: center;
+}
+
+.App-link {
+  color: green;
+}
+
+hr {
+    border: none;
+    height: 1px !important;
+    background-color: white !important;
+}

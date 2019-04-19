@@ -1,10 +1,11 @@
 import React from "react";
 import "./SpeakerCard.module.css";
 
+//integrate handleClick by pulling in handleClick function as a prop
+
 function SpeakerCard(props) {
   return (
-    <div className="card"
-    onClick={props.handleClick}>
+    <div className="card" onClick={props.handleClick}>
       <div className="img-container">
 				<br />
         <img alt={props.name} src={props.image} />

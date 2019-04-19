@@ -39,7 +39,7 @@ class App extends Component {
   				}
   			});
 
-  			const { score } = this.state;
+  			const {score} = this.state;
   			const newScore = score + 1;
 
   			return this.setState({
@@ -63,33 +63,22 @@ class App extends Component {
         <div className="gameScore text-center">
           <h4>Score: {this.state.score}</h4>
         </div>
-        <div className="container">
-          <div className="allCards">
-            <div class="row">
-              <div class="col-xs-6">
-              {this.state.speakers.map(speaker => (
-                <SpeakerCard
-                  handleClick={this.handleClick}
-                  key={speaker.id}
-                  id={speaker.id}
+        <div className="allCards col-xs-6 col-sm-6 col-md-4 col-lg-3 col-xl-3">
 
-                  name={speaker.name}
-                  clicked={speaker.clicked}
-                  image={speaker.image}
-                  title={speaker.title}
-                  company={speaker.company}
-                />
-          ))}
-              </div>
+        {this.state.speakers.map(speaker => (
+          <SpeakerCard
+            handleClick={this.handleClick}
+            removeSpeaker={this.removeSpeaker}
+            id={speaker.id}
+            key={speaker.id}
+            name={speaker.name}
+            image={speaker.image}
+            title={speaker.title}
+            company={speaker.company}
+          />
+        ))}
 
-              <div class="col-xs-6">
-            
-              </div>
-
-            </div>
-          </div>
-        </div>
-
+      </div>
         <Footer>Footer Message</Footer>
       </div>
 

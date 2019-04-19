@@ -1,0 +1,16 @@
+.jumbotron {
+  background-color: green !important;
+  min-height: 80vh !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+hr {
+    border: none;
+    height: 1px !important;
+    background-color: white !important;
+}
